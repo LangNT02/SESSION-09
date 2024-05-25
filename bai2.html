@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+<body>
+    <input type="text" id="inputNumber" placeholder="Nhập vào một số">
+    <button onclick="processNumber()">Thực hiện</button>
+    <p id="result"></p>
+
+    <script>
+        function processNumber() {
+            var number = document.getElementById("inputNumber").value;
+            var numberStr = number.toString();
+            var result = '';
+  
+            for (var i = 0; i < numberStr.length; i++) {
+                result += numberStr[i];
+                if (i < numberStr.length - 1) {
+                    if (parseInt(numberStr[i]) % 2 === 0 && parseInt(numberStr[i + 1]) % 2 === 0) {
+                        result += '-';
+                    }
+                }
+            }
+            
+        
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
